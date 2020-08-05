@@ -1,0 +1,17 @@
+{
+  "name": "obieenode",
+  "version": "1.0.0",
+  "description": "project with medef for our compay",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "soap": "^0.32.0"
+  }
+}
