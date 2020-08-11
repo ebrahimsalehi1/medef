@@ -19,5 +19,8 @@
   "devDependencies": {
     "nodemon": "^2.0.4",
     "pm2": "^4.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }

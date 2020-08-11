@@ -84,6 +84,24 @@ app.delete('/deleteUser',(req,res,next)=>{
     res.send(deleteduser);
 });
 //------------------------------------------------------------
+app.get('/systems',(req,res,next)=>{
+    const systemData = [
+        {
+            system:'اطلاعات کارکنان',
+            systemEng:'Personal System',
+            description:'در این سیستم کلیه اطلاعات کارکنان مدیریت می شوند',
+            abbreviation:'PDS'
+        },
+        {
+            system:'دفترداری',
+            systemEng:'Book keeping',
+            description:'سیستم مدیریت اسناد ',
+            abbreviation:'BFS'
+        },
+    ];
+
+    res.send(systemData);
+});
 
 app.get('/',(req,res,next)=>{
     
