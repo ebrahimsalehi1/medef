@@ -1,7 +1,0 @@
-[
-    {
-        "endpoint":"http://172.25.40.135:9500/PolicyMngAPI/ApplicationRoleMngAPIPort?wsdl",
-        "description":"create application role",
-        "name":"CreateApplicationRole"
-    }
-]
