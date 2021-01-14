@@ -4,24 +4,38 @@ import {PrismaClient} from '@prisma/client';
 
 const router = express.Router();
 const prisma = new PrismaClient();
-
-//export function configCreate(){
-//    console.log('configCreate',new Date().getTime());
     
 export const configCreate = router.post('/config',async (req: express.Request,res: express.Response)=>{
-        console.log(req.body);
 
-        try{
-            const Config = await prisma.config.create(req.body);
+    //res.setHeader('Content-Type', 'application/json');
 
-            res.status(200).send('OK');
-        }
-        catch(e){
-            res.status(417).send(e);
-        }
+    async function createNew(){
+        const Config = await prisma.config.create({data:req.body});
+        res.status(200).send('OK');        
+        return Config;
+    }
 
-    });
+
+    //await prisma.$connect();
+    //await createNew();
+    //const Config = await prisma.config.create({data:req.body});
+    //res.status(200).send('OK');   
+    //await prisma.$disconnect();
+
     
-//}
+    createNew()
+    .then(data=>{
+        console.log(data);
+        
+    })
+    .catch(e=>{
+        console.log(e);   
+        res.status(417).send(e);         
+        throw e;
+    })
+    .finally(async ()=>{    
+        await prisma.$disconnect();
+    });
 
-//export {v};
+});
+    

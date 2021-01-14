@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "build": "tsc --w",
-    "start": "tsc && ts-node ./dist/index.js"
+    "start": "tsc && ts-node ./dist/index.js",
+    "sample": "ts-node sample.ts"
   },
   "keywords": [],
   "author": "",
