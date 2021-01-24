@@ -6,6 +6,11 @@ import * as bodyParser from 'body-parser';
 //import * as mongoose from 'mongoose';
 import {Settings} from './settings';
 import {configCreate} from './src/controllers/configManagement';
+import {sequelize} from './src/utils/database';
+import {EmployeFetchAll,EmployeAdd,EmployeFetchById} from './src/models/employees';
+import {DepartmentFetchAll} from './src/models/departments';
+
+import {dropAndCreate} from './src/models/ceate';
 
 //---------------- constants 
 /*
@@ -38,12 +43,31 @@ app.use(bodyParser.json())
 //app.use(MAIN_ROUTE,login);
 app.use("/",configCreate);
 
+app.use("/",EmployeAdd);
+app.use("/",EmployeFetchAll);
+app.use("/",EmployeFetchById);
+app.use("/",DepartmentFetchAll);
+
+
 app.get('/',(req,res,next)=>{
     res.send('<h1>OBIEE Irisa server has been started</h1>')
 });
 
-app.listen(Settings.PORT,()=>{
-    console.log(`server is running on port ${Settings.PORT}`);
+sequelize
+.sync()
+.then(result=>{
+        console.log(result);
+        dropAndCreate();
+
+        app.listen(Settings.PORT,()=>{
+            console.log(`server is running on port ${Settings.PORT}`);
+        });
+    }
+    )
+.catch(err=>{
+    console.log(err);    
 });
+
+
 
 // --------------

@@ -9,9 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.configCreate = void 0;
+exports.createTablesApi = exports.configCreate = void 0;
 const express = require("express");
 const client_1 = require("@prisma/client");
+//import {createTables} from '../models/employees';
 const router = express.Router();
 const prisma = new client_1.PrismaClient();
 exports.configCreate = router.post('/config', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -23,23 +24,25 @@ exports.configCreate = router.post('/config', (req, res) => __awaiter(void 0, vo
             return Config;
         });
     }
-    yield prisma.$connect();
+    //await prisma.$connect();
     //await createNew();
-    const Config = yield prisma.config.create({ data: req.body });
-    res.status(200).send('OK');
-    yield prisma.$disconnect();
-    /*
+    //const Config = await prisma.config.create({data:req.body});
+    //res.status(200).send('OK');   
+    //await prisma.$disconnect();
     createNew()
-    .then(data=>{
+        .then(data => {
         console.log(data);
-        
     })
-    .catch(e=>{
+        .catch(e => {
         console.log(e);
         res.status(417).send(e);
         throw e;
     })
-    .finally(async ()=>{
-        await prisma.$disconnect();
-    });*/
+        .finally(() => __awaiter(void 0, void 0, void 0, function* () {
+        yield prisma.$disconnect();
+    }));
+}));
+exports.createTablesApi = router.post('/createtables', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    //  await createTables();
+    res.send("created !!!");
 }));

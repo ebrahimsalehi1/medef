@@ -1,6 +1,7 @@
 import * as express from 'express';
 import * as axios from 'axios';
 import {PrismaClient} from '@prisma/client';
+//import {createTables} from '../models/employees';
 
 const router = express.Router();
 const prisma = new PrismaClient();
@@ -39,3 +40,8 @@ export const configCreate = router.post('/config',async (req: express.Request,re
 
 });
     
+export const createTablesApi = router.post('/createtables',async (req: express.Request,res: express.Response)=>{
+  //  await createTables();
+
+    res.send("created !!!")
+})
