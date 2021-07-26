@@ -10,10 +10,32 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Users{
-  id String @id @default(cuid())
-  firstName String 
-  lastName  String
-  email String
-  avatar String
+model Ebi_Users{
+  user_id             Int     @id @default(autoincrement())
+  user_login          String 
+  user_pass           String
+  user_nicename       String
+  user_email          String
+  user_url            String
+  user_registered     DateTime 
+  user_activation_key String
+  user_status         Int
+  display_name        String
 }
+
+model Ebi_UserMeta{
+  umeta_id          Int     @id  @default(autoincrement())
+  user_id           Int
+  meta_key          String
+  meta_value        String  
+}
+
+model Ebi_Options{
+  option_id           Int   @id @default(autoincrement())
+  option_name         String
+  option_value        String
+  autoload            Boolean
+}
+
+
+
