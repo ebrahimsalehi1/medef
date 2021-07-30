@@ -1,0 +1,14 @@
+
+#header{
+    background-color: coral;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    
+}
+
+#header-info{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
