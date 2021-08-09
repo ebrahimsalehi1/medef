@@ -7,7 +7,7 @@ import Test2 from '../Components/Animation/Test2';
 import Test3 from '../Components/Animation/Test3';
 import App from '../App';
 import Add from '@material-ui/icons/Add';
-import TextField from '@material-ui/core/TextField';
+import SliderComp from '../Components/Slider';
 
 export default function Router(){
     return (
@@ -31,6 +31,10 @@ export default function Router(){
 
                     <Test3/>
 
+                </Route>
+
+                <Route path='/slider'>
+                    <SliderComp/>
                 </Route>
 
                 <Route path="/">
