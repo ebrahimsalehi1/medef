@@ -9,6 +9,7 @@ import App from '../App';
 import Add from '@material-ui/icons/Add';
 import TextField from '@material-ui/core/TextField';
 import Boot1 from '../Components/Bootsrtap/Boot1';
+import SliderComp from '../Components/Slider';
 
 export default function Router(){
     return (
@@ -36,6 +37,10 @@ export default function Router(){
                 
                 <Route path="/bootstrap">
                     <Boot1 />        
+                </Route>
+
+                <Route path='/slider'>
+                    <SliderComp/>
                 </Route>
 
                 <Route path="/">
