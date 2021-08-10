@@ -8,6 +8,7 @@ import Test3 from '../Components/Animation/Test3';
 import App from '../App';
 import Add from '@material-ui/icons/Add';
 import TextField from '@material-ui/core/TextField';
+import Boot1 from '../Components/Bootsrtap/Boot1';
 
 export default function Router(){
     return (
@@ -31,6 +32,10 @@ export default function Router(){
 
                     <Test3/>
 
+                </Route>
+                
+                <Route path="/bootstrap">
+                    <Boot1 />        
                 </Route>
 
                 <Route path="/">
