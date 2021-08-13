@@ -1,32 +1,61 @@
+import { Container } from '@material-ui/core';
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input,
-    Container, Row, Col
-} from 'reactstrap';
+import logo from '../../img/logo.png';
+import './Login.css';
 
-const Comp = (props)=>(<div style={{border:'1px solid lightgreen'}}>{props.children}</div>)
-export default function Login(props){
+export default function Login(){
     return (
-        <Container>        
-            <Form>
-                <FormGroup row>
-                    <Label for="exampleEmail" sm={2}>Email</Label>
-                    <Col sm={10}>
-                    <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label for="examplePassword" sm={2}>Password</Label>
-                    <Col sm={10}>
-                    <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-                    </Col>
-                </FormGroup>
-                <FormGroup row inline style={{textAlign:'center'}}>
-                    <Col sm={12}>
-                        <Button outline color="primary">Ok</Button>                    
-                    <Button outline color="secondary">Cancel</Button>
-                    </Col>
-                </FormGroup>            
-            </Form>
-            </Container>
+        <div className="container h-100">
+            <div className="d-flex justify-content-center h-100">
+                <div className="user_card">
+				<div className="d-flex justify-content-center">
+					<div className="brand_logo_container">
+						<img src={logo} className="brand_logo" alt="Logo" />
+					</div>
+                </div>
+
+
+            <div className="d-flex justify-content-center form_container">
+                <form>
+                    <div className="input-group mb-3">
+                        <div className="input-group-append">
+                            <span className="input-group-text"><i className="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" name="" className="form-control input_user" value="" placeholder="user name"/>
+                    </div>
+
+                    <div className="input-group mb-2">
+                        <div className="input-group-append">
+                            <span className="input-group-text"><i className="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" name="" className="form-control input_pass" value="" placeholder="password" />
+                    </div>
+
+                    <div className="form-group">
+                        <div className="custom-control custom-checkbox">
+                            <input type="checkbox" className="custom-control-input" id="customControlInline"/>
+                            <label className="custom-control-label" htmlFor="customControlInline">Remember me</label>
+                        </div>
+                    </div>
+
+                    <div className="d-flex justify-content-center mt-3 login_container">
+                        <button type="button" name="button" className="btn login_btn">Login</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div className="mt-4">
+                <div className="d-flex justify-content-center links">
+                    Don't have an account? <a href="#" className="ml-2">Sign Up</a>
+                </div>
+                <div className="d-flex justify-content-center links">
+                    <a href="#">Forget your password?</a>
+                </div>
+            </div>
+
+            </div>
+            </div>
+        </div>
     );
 }

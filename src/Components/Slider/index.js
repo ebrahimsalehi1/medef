@@ -1,7 +1,7 @@
 import React from 'react';
-import Slider from '@material-ui/lab/Slider';
+import Slider from '@material-ui/core/Slider';
 import {withStyles} from '@material-ui/core/styles';
-import LensIcon from '@material-ui/icons/LensIcon';
+import LensIcon from '@material-ui/icons/Lens';
 
 const styles = theme => ({
     slider: {
@@ -11,6 +11,9 @@ const styles = theme => ({
         backgroundColor: '#0c68e9',
     },
 });
+
+const valueSlider1=5;
+const handleChangeSlider1 = ()=>{console.log('handleChangeSlider1');}
 
 function SliderComp(props){
 
