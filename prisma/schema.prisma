@@ -2,40 +2,59 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./ebi.db"
+  provider = "mysql"
+  url      = "mysql://root:@localhost:3306/buildings"
 }
 
 generator client {
   provider = "prisma-client-js"
 }
 
-model Ebi_Users{
-  user_id             Int     @id @default(autoincrement())
-  user_login          String 
+model Ebi_Users {
+  user_id             Int      @id @default(autoincrement())
+  user_login          String
   user_pass           String
   user_nicename       String
   user_email          String
   user_url            String
-  user_registered     DateTime 
+  user_registered     DateTime
   user_activation_key String
   user_status         Int
   display_name        String
 }
 
-model Ebi_UserMeta{
-  umeta_id          Int     @id  @default(autoincrement())
-  user_id           Int
-  meta_key          String
-  meta_value        String  
+model Ebi_UserMeta {
+  umeta_id   Int    @id @default(autoincrement())
+  user_id    Int
+  meta_key   String
+  meta_value String
 }
 
-model Ebi_Options{
-  option_id           Int   @id @default(autoincrement())
-  option_name         String
-  option_value        String
-  autoload            Boolean
+model Ebi_Options {
+  option_id    Int     @id @default(autoincrement())
+  option_name  String
+  option_value String
+  autoload     Boolean
 }
 
+model Ebi_Country {
+  country_id  Int         @id @default(autoincrement())
+  country_name String
+  Ebi_State   Ebi_State[]
+}
 
+model Ebi_State {
+  state_id    Int         @id @default(autoincrement())
+  state_name  String
+  country_id  Int
+  Ebi_Country Ebi_Country @relation(fields: [country_id], references: [country_id])
+  Ebi_City    Ebi_City[]
+}
+
+model Ebi_City{
+  city_id     Int         @id @default(autoincrement())
+  city_name    String
+  state_id    Int
+  Ebi_State   Ebi_State   @relation(fields:[state_id],references:[state_id])
+}
 
