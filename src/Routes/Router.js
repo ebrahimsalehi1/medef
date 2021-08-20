@@ -10,6 +10,14 @@ import Add from '@material-ui/icons/Add';
 import TextField from '@material-ui/core/TextField';
 import Boot1 from '../Components/Bootsrtap/Boot1';
 import SliderComp from '../Components/Slider';
+import Home from '../Components/Manoyar/Home';
+
+const typ = {
+    loadApp:1,
+    loadHome:2
+}
+
+const whichTypShow = typ.loadHome;
 
 export default function Router(){
     return (
@@ -44,7 +52,12 @@ export default function Router(){
                 </Route>
 
                 <Route path="/">
-                    <App/>
+                    {
+                        typ.loadApp==whichTypShow && <App/>
+                    }
+                    {
+                        typ.loadHome==whichTypShow && <Home/>
+                    }
                 </Route>
             </Switch>
         </BrowserRouter>
