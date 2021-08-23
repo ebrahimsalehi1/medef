@@ -1,0 +1,34 @@
+
+.container{
+    width:100vh;
+    height:100wh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+}
+
+.image{
+    width:350px;
+    height:350px;
+    background: url(pic.jpg);
+    background-size: 100%;
+    background-position: center;
+    transition:1s;
+}
+
+.image:hover{
+    background-size: 500%;
+    background-position: center;
+    cursor:zoom-out;
+    overflow-x:scroll;
+    overflow-y:scroll;
+}
+
+.box{
+    width:200px;
+    height:200px;
+    background-color: seagreen;
+    color: yellow;
+    opacity:1;
+}
