@@ -58,3 +58,18 @@ model Ebi_City{
   Ebi_State   Ebi_State   @relation(fields:[state_id],references:[state_id])
 }
 
+model Ebi_Lookup{
+  lookup_id         String  @id
+  lookup_title      String 
+  Ebi_Lookup_Value  Ebi_Lookup_Value[]
+}
+
+model Ebi_Lookup_Value{
+  lookup_value_id   Int           @id @default(autoincrement())
+  lookup_key        String
+  lookup_value      String
+  lookup_id         String
+  Ebi_Lookup        Ebi_Lookup    @relation(fields:[lookup_id],references:[lookup_id])
+}
+
+
