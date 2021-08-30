@@ -21,6 +21,8 @@ model Ebi_Users {
   user_activation_key String
   user_status         Int
   display_name        String
+
+  Ebi_User_Image     Ebi_User_Image[]
 }
 
 model Ebi_UserMeta {
@@ -28,6 +30,13 @@ model Ebi_UserMeta {
   user_id    Int
   meta_key   String
   meta_value String
+}
+
+model Ebi_User_Image{
+  user_image_id  Int @id @default(autoincrement())
+  user_id        Int 
+  image_path     String  
+  Ebi_Users      Ebi_Users @relation(fields:[user_id],references:[user_id]) 
 }
 
 model Ebi_Options {
