@@ -12,6 +12,17 @@ import Boot1 from '../Components/Bootsrtap/Boot1';
 import SliderComp from '../Components/Slider';
 import Home from '../Components/Manoyar/Home';
 
+import Edit from '@material-ui/icons/Edit';
+import Delete from '@material-ui/icons/Delete';
+
+import {red,grey,blue} from '@material-ui/core/colors';
+
+
+const SampleComp = ()=>(<div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                            <Edit style={{cursor: 'pointer',color: blue[900]}}/>
+                            <Delete style={{cursor: 'pointer',color: blue[900]}}/>
+                    </div>)
+
 const typ = {
     loadApp:1,
     loadHome:2
@@ -50,6 +61,10 @@ export default function Router(){
                 <Route path='/slider'>
                     <SliderComp/>
                 </Route>
+
+                <Route path='/test'>
+                    <SampleComp/>                    
+                </Route>                   
 
                 <Route path="/">
                     {
