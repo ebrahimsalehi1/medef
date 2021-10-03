@@ -16,6 +16,7 @@ import Edit from '@material-ui/icons/Edit';
 import Delete from '@material-ui/icons/Delete';
 
 import {red,grey,blue} from '@material-ui/core/colors';
+import User from '../Components/Manoyar/User';
 
 
 const SampleComp = ()=>(<div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
@@ -63,7 +64,7 @@ export default function Router(){
                 </Route>
 
                 <Route path='/test'>
-                    <SampleComp/>                    
+                    <User/>                    
                 </Route>                   
 
                 <Route path="/">
