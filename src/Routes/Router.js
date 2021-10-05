@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter , Switch,Route} from 'react-router-dom';
 
-import Login from '../Components/Authentication/Login';
+//import Login from '../Components/Authentication/Login';
 import MyAnimate from '../Components/Animation/MyAnimate';
 import Test2 from '../Components/Animation/Test2';
 import Test3 from '../Components/Animation/Test3';
@@ -17,6 +17,8 @@ import Delete from '@material-ui/icons/Delete';
 
 import {red,grey,blue} from '@material-ui/core/colors';
 import User from '../Components/Manoyar/User';
+
+const Login = React.lazy(()=>import('../Components/Manoyar/Security/Login'));
 
 
 const SampleComp = ()=>(<div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>

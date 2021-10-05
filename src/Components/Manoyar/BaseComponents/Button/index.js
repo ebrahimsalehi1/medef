@@ -2,7 +2,7 @@ import React from 'react';
 import {styled} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-const EBIButton = styled(Button)(props=>({
+const EBButton = styled(Button)(props=>({
     margin:8,
     paddingLeft: 12,
     paddingRight: 12,
@@ -21,5 +21,9 @@ const EBIButton = styled(Button)(props=>({
 }));
 
 export default function StyledButton(props){
-    return (<EBIButton {...props}>{props.children}</EBIButton>)
+    return (<EBButton {...props}>{props.children}</EBButton>)
 }
+
+EBButton.propTypes = {
+
+};

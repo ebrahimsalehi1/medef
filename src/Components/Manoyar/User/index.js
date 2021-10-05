@@ -25,9 +25,11 @@ export default function User(props){
     return (
         <div>
             <form onSubmit={formik.handleSubmit}>
+            
             <TextField 
                 value={formik.values.birthDate}
                 placeholder="test test test"
+                type="number"
                 fullWidth
                 onChange={formik.handleChange}
                 error={formik.touched.birthDate && Boolean(formik.errors.birthDate)}
@@ -35,7 +37,7 @@ export default function User(props){
             />
 
             <Select
-            value={formik.values.sex}
+            value={formik.values.sex}   
             items={[{name:'مرد',value:'male'},{name:'زن',value:'female'}]}
             onChange={formik.handleChange}
             />

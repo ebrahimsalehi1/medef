@@ -16,12 +16,8 @@ const useStyles = makeStyles((theme) => ({
     }
   }
 }));
-/**
- * IrisaSelect
- * @visibleName Irisa Checkbox
- */
 
-export default function EBISelect(props) {
+export default function EBSelect(props) {
   const classes = useStyles();
 
   const {label,items} = props;
@@ -43,7 +39,7 @@ export default function EBISelect(props) {
   );
 }
 
-EBISelect.propTypes = {
+EBSelect.propTypes = {
   /**
    * If `true`, the component is checked.
    */

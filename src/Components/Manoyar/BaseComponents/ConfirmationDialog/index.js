@@ -12,7 +12,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function ConfirmationDialog(props){
+export default function EBConfirmationDialog(props){
 
     const {openDialog,dialogTitle,dialogContent,setOpen,onExecute} = props;
     return (
@@ -48,3 +48,7 @@ export default function ConfirmationDialog(props){
         </Dialog>
     )
 }
+
+EBConfirmationDialog.propTypes = {
+
+};

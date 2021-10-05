@@ -68,7 +68,7 @@ function Transition(props) {
     return <Slide direction="left" {...props} />;
 }
 
-class IbxDialog extends React.PureComponent {
+class EBDialog extends React.PureComponent {
 
     render() {
         const {classes, eventClose, maxWidth,
@@ -115,7 +115,7 @@ class IbxDialog extends React.PureComponent {
     }
 }
 
-IbxDialog.propTypes = {
+EBDialog.propTypes = {
     //classes: PropTypes.object.isRequired,
     eventClose: PropTypes.func.isRequired,
     openModal: PropTypes.bool.isRequired,
@@ -125,5 +125,5 @@ IbxDialog.propTypes = {
     actionBar:PropTypes.node
 };
 
-export default IbxDialog;
+export default EBDialog;
 

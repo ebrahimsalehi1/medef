@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
  * IrisaLoading
  * @visibleName Irisa Loading
  */
-export default function IrisaLoading(props) {
+export default function EBLoading(props) {
   const classes = useStyles();
   const { title, open } = props;
   const color = localStorage.getItem('settings')
@@ -63,14 +63,6 @@ export default function IrisaLoading(props) {
   );
 }
 
-IrisaLoading.propTypes = {
-  /**
-   * If `true`, the loading is showing.
-   * @default false
-   */
-  open: PropTypes.bool,
-  /**
-   * The title of loading
-   */
-  title: PropTypes.string
+EBLoading.propTypes = {
+
 };
