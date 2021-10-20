@@ -6,6 +6,9 @@ import PropTypes from 'prop-types';
 
 
 export default function EBGrid(props) {
+  if(props.container)
+    return <Grid spacing={2} {...props} />;
+  else
   return <Grid {...props} />;
 }
 

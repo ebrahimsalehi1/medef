@@ -27,7 +27,7 @@ export default function Login(){
 
     return (
     <form onSubmit={formik.handleSubmit}>
-    <Grid container spacing={2}>
+    <Grid container>
        
         <Grid item xs={12} md={12}>
             <TextField
@@ -44,6 +44,7 @@ export default function Login(){
             <TextField
             name="password"
             id="password"
+            type="password"
             label={'رمزورود'}   
             value={formik.values.password}
             onChange={formik.handleChange}
@@ -51,7 +52,7 @@ export default function Login(){
             />
         </Grid>
         <Grid item xs={12} md={12}>
-            <Button type="submit">ورود به سیستم</Button>
+            <Button type="submit" color="primary">ورود به سیستم</Button>
         </Grid>    
         
     </Grid>
