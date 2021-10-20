@@ -1,7 +1,6 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import { elementAcceptingRef } from '@material-ui/utils';
-import { makeStyles } from '@material-ui/core';
+import Grid from '@mui/material/Grid';
+import { makeStyles } from '@mui/material';
 import PropTypes from 'prop-types';
 
 

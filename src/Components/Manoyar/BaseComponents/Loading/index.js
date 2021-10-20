@@ -1,68 +1,83 @@
-import React from 'react';
-import { Typography, makeStyles, Modal } from '@material-ui/core';
+import React, { useState } from 'react';
+import Backdrop from '@mui/material/Backdrop';
+import IrisaLogo from '../../../../assets/img/IrisaLogo.svg';
+import CustomImageLoader from 'custom-image-loader-react';
+import { makeStyles } from '@mui/material';
 import PropTypes from 'prop-types';
-import { LoopCircleLoading } from 'react-loadingg';
-import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
-    position: 'absolute',
-    padding: theme.spacing.unit * 4,
-    outline: 'none',
-    top: `40%`,
-    left: `50%`,
-    backgroundColor: 'transparent'
+  backdrop: {
+    zIndex: 10000,
+    backgroundColor: 'rgba(256,256,256, 0.3)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center'
   },
-  title: {
-    fontSize: '14px',
-    marginBottom: '100px'
+  wrapper: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    zIndex: 10001,
+    transform: 'translate(-50%, -50%)',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  text: {
+    fontSize: '11px',
+    color: '#3f51b5',
+    margin: '0px',
+    animation: '2s linear 0s infinite normal none running flash',
+    textAlign: 'center'
   }
 }));
 
-/**
- * IrisaLoading
- * @visibleName Irisa Loading
- */
-export default function EBLoading(props) {
-  const classes = useStyles();
-  const { title, open } = props;
-  const color = localStorage.getItem('settings')
-    ? JSON.parse(localStorage.getItem('settings'))['theme'] === 'LIGHT'
-      ? '#300dbc'
-      : '#a67dff'
-    : '#300dbc';
 
-  return (
-    <Modal
-      aria-labelledby="simple-modal-title"
-      aria-describedby="simple-modal-description"
-      open={open}
-      hideBackdrop={true}
-    >
-      <div className={classes.paper}>
-        <LoopCircleLoading
-          color={color}
-          size={'large'}
-          style={{
-            display: 'block',
-            marginTop: '30px',
-            marginLeft: '20px',
-            borderColor: color
-          }}
-        />
-        <Typography
-          variant="h6"
-          id="modal-title"
-          className={classes.title}
-          style={{ color: color }}
-        >
-          {title}
-        </Typography>
-      </div>
-    </Modal>
-  );
+
+export function useEBLoading() {
+  const [open, setOpen] = useState(false);
+  const classes = useStyles();
+
+  const showLoading = () => {
+    setOpen(true);
+  };
+
+  const hideLoading = () => {
+    setOpen(false);
+  };
+
+  const loading = ({ text, backdrop, image }) => {
+    return (
+      <>
+        {backdrop && <Backdrop className={classes.backdrop} open={open} />}
+
+        <div className={classes.wrapper}>
+          <CustomImageLoader
+            image={image ? image : IrisaLogo}
+            isLoaded={open}
+            circle={false}
+            speed={2}
+            animationType={'flash'}
+          />
+          {open && text && <p className={classes.text}>{text}</p>}
+        </div>
+      </>
+    );
+  };
+
+  return { loading, showLoading, hideLoading };
 }
 
 EBLoading.propTypes = {
-
+  /**
+   * If `true`, the loading is showing.
+   * @default false
+   */
+  open: PropTypes.bool,
+  /**
+   * The title of loading
+   */
+  title: PropTypes.string
 };

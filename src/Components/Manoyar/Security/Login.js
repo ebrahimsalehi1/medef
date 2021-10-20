@@ -4,6 +4,7 @@ import TextField from '../BaseComponents/TextField';
 import Button from '../BaseComponents/Button';
 import {useFormik} from 'formik';
 import * as yup from 'yup';
+import Box from '../BaseComponents/Box';
 
 const validationSchema=yup.object({
     userName:yup.string().required('user name must be entered'),
@@ -27,6 +28,7 @@ export default function Login(){
 
     return (
     <form onSubmit={formik.handleSubmit}>
+    <Box>    
     <Grid container>
        
         <Grid item xs={12} md={12}>
@@ -56,6 +58,7 @@ export default function Login(){
         </Grid>    
         
     </Grid>
+    </Box>
     </form>
     )
 }

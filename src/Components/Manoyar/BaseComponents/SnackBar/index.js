@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSnackbar } from 'notistack';
-import Slide from '@material-ui/core/Slide';
-import IconButton from '@material-ui/core/IconButton';
-import { Close } from '@material-ui/icons';
+import Slide from '@mui/material/Slide';
+import IconButton from '@mui/material/IconButton';
+import { Close } from '@mui/icons';
 
 
 export function useEBSnackbar() {

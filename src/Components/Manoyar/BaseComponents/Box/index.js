@@ -1,7 +1,8 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core';
+import Grid from '@mui/material/Grid';
+import { makeStyles } from '@mui/material';
 import PropTypes from 'prop-types';
+import Box from '@mui/material/Box';
 
 export default function EBBox(props) {
     return <Box {...props} />;
