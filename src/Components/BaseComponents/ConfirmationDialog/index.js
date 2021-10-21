@@ -1,12 +1,12 @@
 import React from 'react';
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogActions from "@material-ui/core/DialogActions";
-import Slide from "@material-ui/core/Slide";
-import Grid from "@material-ui/core/Grid";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import Slide from "@mui/material/Slide";
+import Grid from "@mui/material/Grid";
 import Button from "../Button";
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/material/Typography";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;

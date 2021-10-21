@@ -1,6 +1,8 @@
 import React from 'react';
 import { Form } from 'formik';
-import { makeStyles, Box, FormHelperText } from '@material-ui/core';
+import { makeStyles, Box, FormHelperText } from '@mui/material';
+import Box from '@mui/material/Box';
+import FormHelperText from '@mui/material/FormHelperText';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
